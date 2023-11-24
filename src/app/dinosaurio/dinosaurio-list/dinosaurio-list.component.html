@@ -1,0 +1,39 @@
+
+<div class="container-fluid" style="background-color: black;">
+  <img src="https://raw.githubusercontent.com/2603-Uniandes/jsons/main/logo.webp" width="100 rem" height="100 rem" style="background-position: 0%;">
+</div>
+<div class="container-fluid">
+  <div class="col-6">
+    <div *ngIf="selected">
+    <app-dinosaurio-detail [dinosaurioDetail]="selectedDinosaurio"></app-dinosaurio-detail>
+   </div>
+  </div>
+  </div>
+  <div class="container-fluid">
+  <div class="col-6">
+  <div class="row">
+    <div class="col mb-2" *ngFor="let dinosaurio of dinosaurios">
+          <div class="card p-2" style="width: 15rem; height: 33rem">
+            <h1>{{dinosaurio.name}}</h1>
+              <img
+                class="card-img-top"
+                src="{{ dinosaurio.image }}"
+                alt="{{ dinosaurio.name }}"
+                (click)="onSelected(dinosaurio)"
+              />
+              <div class="card-body">
+                <h2 class="card-title">{{ dinosaurio.scientificName }}</h2>
+                  <p class="card-text">[{{ dinosaurio.description }}]</p>
+              </div>
+           </div>
+      </div>
+   </div>
+</div>
+</div>
+<div class="container-fluid">
+  <div class="col-6">
+    <div class="card-body">
+      (selectedDinosaurio)
+      </div>
+  </div>
+</div>
